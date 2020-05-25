@@ -1,0 +1,47 @@
+$borderRadius: 20px;
+
+body {
+    background-color: aquamarine;
+}
+
+header {
+    text-align: center;
+    font-family: Montserrat;
+    font-weight: 700;
+    color: #60606e;
+}
+
+.section-1 {
+    margin-left: 20px;
+    margin-right: 20px;
+    background-color: black;
+    border-bottom-left-radius: $borderRadius;
+    border-top-left-radius: $borderRadius;
+
+    .field-farm {
+        width: 80%;
+        height: 500px;
+        background-color: red;
+        border-style: inset;
+        border-color: antiquewhite;
+        border-radius: $borderRadius;
+        background-image: url("../img/2d-Illustration-Game-Background-Garden-Bench.jpg");
+        background-size: cover;
+        display: flex;
+        flex-wrap: wrap;
+        align-content: start;
+        box-sizing: content-box;
+        padding-top: 5px;
+        padding-bottom: 5px;
+        display: flex;
+        justify-content: center;
+
+        div {
+            width: 11%;
+            height: 120px;
+            background-color: blueviolet;
+            margin: 2px;
+        }
+    }
+}
+

@@ -1,91 +1,117 @@
 $borderRadius: 20px;
 
 body {
-    background-color: aquamarine;
+  background-color: aquamarine;
 }
 
 header {
-    text-align: center;
-    font-family: Montserrat;
-    font-weight: 700;
-    color: #60606e;
+  text-align: center;
+  font-family: Montserrat;
+  font-weight: 700;
+  color: #60606e;
 }
 
 %section {
-    display: flex;
-    margin-left: 20px;
-    margin-right: 20px;
-    background-color: black;
+  display: flex;
+  margin-left: 20px;
+  margin-right: 20px;
+
 }
 
 .section-1 {
-    @extend %section;
-    border-bottom-left-radius: $borderRadius;
-    border-top-left-radius: $borderRadius;
+  @extend %section;
+  border-bottom-left-radius: $borderRadius;
+  border-top-left-radius: $borderRadius;
 
-    .field-farm {
-        width: 80%;
-        height: 500px;
-        background-color: red;
-        border-style: inset;
-        border-color: antiquewhite;
-        border-radius: $borderRadius;
-        background-image: url("https://retrostylegames.com/img/2019/06/2d-Illustration-Game-Background-Garden-Bench.jpg");
-        background-size: cover;
-        display: flex;
-        flex-wrap: wrap;
-        align-content: start;
-        box-sizing: content-box;
-        padding-top: 5px;
-        padding-bottom: 5px;
-        display: flex;
-        justify-content: center;
+  .field-farm {
+    width: 80%;
+    height: 500px;
+    background-color: red;
+    border-style: inset;
+    border-color: antiquewhite;
+    border-radius: $borderRadius;
+    background-image: url("https://retrostylegames.com/img/2019/06/2d-Illustration-Game-Background-Garden-Bench.jpg");
+    background-size: cover;
+    display: flex;
+    flex-wrap: wrap;
+    align-content: start;
+    box-sizing: content-box;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    display: flex;
+    justify-content: center;
 
-        div {
-            width: 11%;
-            height: 120px;
-            margin: 2px;
+    div {
+      width: 11%;
+      height: 120px;
+      margin: 2px;
 
-            &:hover {
-                background-color: greenyellow;
-                opacity: 0.5;
-            }
-        }
+      &:hover {
+        background-color: greenyellow;
+        opacity: 0.5;
+      }
+    }
+  }
+
+  .barn-market {
+    margin-left: 5px;
+    width: 20%;
+
+
+    %size-bm {
+      width: 100%;
+      height: 50%;
     }
 
-    .barn-market {
-        margin-left: 5px;
-        width: 20%;
-        background-color: antiquewhite;
+    .barn {
+      @extend %size-bm;
+      border-style: inset;
+      border-radius: $borderRadius;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: end;
+      align-content: start;
+      background-color: #d2a34f;
+      overflow: auto;
+      scrollbar-color: rebeccapurple green;
+      scrollbar-width: thin;
 
-        %size-bm {
-            width: 100%;
-            height: 50%;
-        }
-
-        .barn {
-            @extend %size-bm;
-            background-color: greenyellow;
-        }
-
-        .market {
-            @extend %size-bm;
-            background-color: aliceblue;
-        }
+      .fruit {
+        width: 65px;
+        height: 65px;
+        background-color: blueviolet;
+        margin: 5px;
+      }
     }
+
+    .market {
+      @extend %size-bm;
+      background-color: aliceblue;
+    }
+  }
 }
 
 .section-2 {
-    @extend %section;
-    margin-top: 5px;
-    border-style: inset;
-    border-radius: $borderRadius;
-    padding: 7px;
+  @extend %section;
+  margin-top: 5px;
+  border-style: inset;
+  border-radius: $borderRadius;
+  padding: 7px;
 
-    .inventory {
-        height: 200px;
-        width: 100px;
-        background-color: #60606e;
+  .inventory {
+    height: 200px;
+    width: 100%;
+    background-color: #60606e;
+    display: flex;
+    overflow: auto;
+
+    .plant {
+      width: 200px;
+      height: 100%;
+      background-color: chocolate;
+      margin-left: 5px;
+      flex-shrink: 0;
     }
+  }
 }
 

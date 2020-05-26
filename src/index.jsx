@@ -6,6 +6,7 @@ import FieldFarm from "./components/FieldFarm";
 import Barn from "./components/Barn";
 import Market from "./components/Market";
 import Inventory from "./components/Inventory";
+import {Controller, Scene} from 'react-scrollmagic';
 
 class App extends Component {
     render() {
@@ -18,6 +19,7 @@ class App extends Component {
                     <Market/>
                 </div>
             </div>
+
             <section className="section-2">
                 <Inventory/>
             </section>

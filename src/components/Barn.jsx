@@ -2,7 +2,37 @@ import React from "react";
 
 const Barn = () => {
     return <div className="barn">
-        <div></div>
+        <div className="fruit"></div>
+        <div className="fruit"></div>
+        <div className="fruit"></div>
+        <div className="fruit"></div>
+        <div className="fruit"></div>
+        <div className="fruit"></div>
+        <div className="fruit"></div>
+
+        <div className="fruit"></div>
+        <div className="fruit"></div>
+        <div className="fruit"></div>
+        <div className="fruit"></div>
+        <div className="fruit"></div>
+        <div className="fruit"></div>
+        <div className="fruit"></div>
+
+        <div className="fruit"></div>
+        <div className="fruit"></div>
+        <div className="fruit"></div>
+        <div className="fruit"></div>
+        <div className="fruit"></div>
+        <div className="fruit"></div>
+        <div className="fruit"></div>
+
+        <div className="fruit"></div>
+        <div className="fruit"></div>
+        <div className="fruit"></div>
+        <div className="fruit"></div>
+        <div className="fruit"></div>
+        <div className="fruit"></div>
+        <div className="fruit"></div>
     </div>
 };
 

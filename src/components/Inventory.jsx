@@ -17,8 +17,6 @@ class Inventory extends Component {
     render() {
         return <div className="inventory" id="inventory" onWheel={this.handleWheel}>
             <Plant></Plant>
-            <Plant></Plant>
-            <Plant></Plant>
         </div>
     }
 };

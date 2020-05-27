@@ -6,7 +6,6 @@ import FieldFarm from "./components/FieldFarm";
 import Barn from "./components/Barn";
 import Market from "./components/Market";
 import Inventory from "./components/Inventory";
-import {Controller, Scene} from 'react-scrollmagic';
 
 class App extends Component {
     render() {

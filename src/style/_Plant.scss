@@ -1,0 +1,41 @@
+.plant {
+  width: 200px;
+  height: 100%;
+  background-color: chocolate;
+  margin-left: 5px;
+  flex-shrink: 0;
+  box-sizing: border-box;
+
+  &-title {
+    text-align: center;
+    font-size: 19px;
+  }
+
+  &-body {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 100%;
+  }
+
+  &-image {
+    background-color: green;
+    width: 50%;
+    height: 100%;
+  }
+
+  %size-fd {
+    width: 50%;
+    height: 50%;
+  }
+
+  &-fruit-image {
+    @extend %size-fd;
+    background-color: violet;
+  }
+
+  &-description {
+    @extend %size-fd;
+    background-color: navajowhite;
+  }
+}

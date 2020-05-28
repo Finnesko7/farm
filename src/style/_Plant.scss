@@ -9,13 +9,14 @@
   &-title {
     text-align: center;
     font-size: 19px;
+    height: 15%;
   }
 
   &-body {
     display: flex;
     flex-direction: column;
     flex-wrap: wrap;
-    height: 100%;
+    height: 85%;
   }
 
   &-image {

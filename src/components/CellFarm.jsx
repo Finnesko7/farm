@@ -1,16 +1,29 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 
 function CallFarm(props) {
 
-    const drop = e => {
-        e.preventDefault();
-        console.log(e.dataTransfer.getData('plant-id'));
-        const plantId = e.dataTransfer.getData('plant-id');
-        const plant = document.getElementById(plantId);
-        plant.style.display = 'block';
-        plant.style.background = 'black';
+    const [color, setColor] = useState("");
 
-        e.target.appendChild(plant)
+    useEffect(() => {
+        console.log("Cell Farm render ...", props.number);
+       if (props.number == 10) {
+           setColor("cell-white");
+       }
+    });
+
+    const drop = e => {
+        console.log(e);
+        setColor("cell-white");
+        startProgress();
+    }
+
+    function startProgress() {
+        console.log("startProgress ....");
+
+        setTimeout(() => {
+            console.log("Change color to default");
+            setColor("");
+        }, 3000);
     }
 
     const dragOver = e => {
@@ -19,6 +32,7 @@ function CallFarm(props) {
 
     return (
         <div
+            className={color}
             id={props.number}
             onDrop={drop}
             onDragOver={dragOver}

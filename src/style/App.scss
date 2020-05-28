@@ -42,10 +42,19 @@ header {
     display: flex;
     justify-content: center;
 
+    .cell-white {
+      background-color: white;
+    }
+
     div {
       width: 11%;
       height: 120px;
       margin: 2px;
+      background-color: blueviolet;
+
+      .cell-white {
+        background-color: white;
+      }
 
       &:hover {
         background-color: greenyellow;

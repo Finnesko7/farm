@@ -1,6 +1,6 @@
-import React from "react";
+import React, {useState, useEffect} from "react";
 
-const Plant = () => {
+const Plant = (props) => {
 
     function dragStart(e) {
         e.dataTransfer.setData('plant-id', e.target.id);
@@ -12,9 +12,11 @@ const Plant = () => {
             <div className="plant-image"></div>
             <div className="plant-fruit-image"
                  draggable={true}
-                 id="apple"
+                 id={props.id}
                  onDragStart={dragStart}
-            ></div>
+            >
+                {props.id}
+            </div>
             <div className="plant-description"></div>
         </div>
     </div>

@@ -7,22 +7,32 @@ import Barn from "./components/Barn";
 import Market from "./components/Market";
 import Inventory from "./components/Inventory";
 
+const userObjct = {
+    countPlants: 5
+}
+
+const ContextFarm = React.createContext();
+
 class App extends Component {
     render() {
-        return <div>
-            <Header/>
-            <div className="section-1">
-                <FieldFarm/>
-                <div className="barn-market">
-                    <Barn/>
-                    <Market/>
-                </div>
-            </div>
+        return (
+            <ContextFarm.Provider value={userObjct}>
+                <div>
+                    <Header/>
+                    <div className="section-1">
+                        <FieldFarm/>
+                        <div className="barn-market">
+                            <Barn/>
+                            <Market/>
+                        </div>
+                    </div>
 
-            <section className="section-2">
-                <Inventory/>
-            </section>
-        </div>
+                    <section className="section-2">
+                        <Inventory/>
+                    </section>
+                </div>
+            </ContextFarm.Provider>
+        )
     }
 }
 

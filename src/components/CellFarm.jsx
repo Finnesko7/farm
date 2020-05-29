@@ -1,8 +1,10 @@
 import React, {useState, useEffect} from "react";
+import Progress from "./Progress";
 
 function CallFarm(props) {
 
     const [color, setColor] = useState("");
+    const [progressPlant, setProgressPlant] = useState("");
 
     useEffect(() => {
         console.log("Cell Farm render ...", props.number);
@@ -14,6 +16,7 @@ function CallFarm(props) {
     const drop = e => {
         console.log(e);
         setColor("cell-white");
+        setProgressPlant(<Progress/>);
         startProgress();
     }
 
@@ -26,6 +29,14 @@ function CallFarm(props) {
         }, 3000);
     }
 
+    function dragEnter(element) {
+        console.log("dragEnter", element);
+    }
+
+    function dragLeave(element) {
+
+    }
+
     const dragOver = e => {
         e.preventDefault();
     }
@@ -36,7 +47,10 @@ function CallFarm(props) {
             id={props.number}
             onDrop={drop}
             onDragOver={dragOver}
+            onDragEnter={dragEnter}
+            onDragLeave={dragLeave}
         >
+            {progressPlant}
         </div>
     )
 }

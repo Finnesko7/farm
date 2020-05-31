@@ -1,0 +1,29 @@
+header {
+  display: flex;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.header {
+  &-title {
+    color: #ffdb6c;
+    width: 80%;
+    text-align: center;
+  }
+
+  &-info {
+    display: flex;
+    justify-content: space-between;
+    width: 20%;
+    background: #754c24;
+    border-radius: 3px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+
+    span {
+      color: white;
+    }
+  }
+}

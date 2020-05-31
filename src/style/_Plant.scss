@@ -1,15 +1,22 @@
 .plant {
   width: 200px;
   height: 100%;
-  background-color: chocolate;
+  background-color: #a67c52;
   margin-left: 5px;
   flex-shrink: 0;
   box-sizing: border-box;
 
   &-title {
-    text-align: center;
-    font-size: 19px;
+    color: #ffdb6c;
+    font-family: "Helvetica Neue Cyr";
+    font-size: 18px;
+    font-weight: 700;
     height: 15%;
+    display: flex;
+    justify-content: space-between;
+    padding-right: 10px;
+    padding-left: 10px;
+    padding-top: 10px;
   }
 
   &-body {
@@ -17,12 +24,22 @@
     flex-direction: column;
     flex-wrap: wrap;
     height: 85%;
+
+    img {
+      margin: auto;
+      display: block;
+      vertical-align: middle;
+      position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+    }
   }
 
   &-image {
-    background-color: green;
     width: 50%;
     height: 100%;
+
+
   }
 
   %size-fd {
@@ -32,12 +49,18 @@
 
   &-fruit-image {
     @extend %size-fd;
-    background-color: violet;
     cursor: move;
   }
 
   &-description {
     @extend %size-fd;
-    background-color: navajowhite;
+    color: #ffffff;
+    font-family: "Helvetica Neue Cyr";
+    font-size: 14px;
+    padding-top: 10px;
+
+    p {
+      line-height: 2px;
+    }
   }
 }

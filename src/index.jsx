@@ -6,17 +6,16 @@ import FieldFarm from "./components/FieldFarm";
 import Barn from "./components/Barn";
 import Market from "./components/Market";
 import Inventory from "./components/Inventory";
+import ContextFarm from "./hooks/UserUbject";
 
-const userObjct = {
-    countPlants: 5
+const userObject = {
+    countPlans: 5
 }
-
-const ContextFarm = React.createContext();
 
 class App extends Component {
     render() {
         return (
-            <ContextFarm.Provider value={userObjct}>
+            <ContextFarm.Provider value={userObject}>
                 <div>
                     <Header/>
                     <div className="section-1">

@@ -1,0 +1,95 @@
+
+.barn-market {
+  margin-left: 10px;
+  width: 20%;
+
+  %size-bm {
+    width: 100%;
+    height: 50%;
+    box-sizing: border-box;
+    border-style: initial;
+    border-radius: 3px;
+    background-color: #754c24;
+  }
+
+  %title {
+    color: #ffdb6c;
+    font-family: "Helvetica Neue Cyr";
+    font-size: 18px;
+    font-weight: 700;
+    margin-top: 5px;
+    margin-left: 10px;
+    height: 10%;
+  }
+
+  %list {
+    overflow: auto;
+    scrollbar-color: #a67c52 #754c24;
+    scrollbar-width: thin;
+    height: 90%;
+  }
+
+  %item-list {
+    height: 65px;
+    margin: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: #ffffff;
+    font-family: "Helvetica Neue Cyr";
+    font-size: 12px;
+    font-weight: 700;
+  }
+
+  %button {
+    width: 50px;
+    height: 25px;
+    background-color: #ffff00;
+    color: #885f37;
+    font-family: "Helvetica Neue Cyr";
+    font-size: 14px;
+    font-weight: 700;
+    border-radius: 11px;
+  }
+
+  .barn {
+    @extend %size-bm;
+
+    &-title {
+      @extend %title;
+    }
+
+    &-list {
+      @extend %list
+    }
+
+    .fruit {
+      @extend %item-list;
+
+      &-sell {
+        @extend %button;
+      }
+    }
+  }
+
+  .market {
+    @extend %size-bm;
+    margin-top: 10px;
+
+    &-title {
+      @extend %title;
+    }
+
+    &-list {
+      @extend %list
+    }
+
+    .seed {
+      @extend %item-list;
+
+      &-buy {
+        @extend %button;
+      }
+    }
+  }
+}

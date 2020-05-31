@@ -1,23 +1,28 @@
-import React, {useState, useEffect} from "react";
+import React, {useState, useEffect, useContext} from "react";
 import Progress from "./Progress";
+import UserObject from "../hooks/UserUbject";
+import imageTest from "../img/tree_ico.png"
+
 
 function CallFarm(props) {
-
+    const userObject = useContext(UserObject);
     const [color, setColor] = useState("");
+    const [image, setImage] = useState("");
     const [progressPlant, setProgressPlant] = useState("");
 
-    useEffect(() => {
-        console.log("Cell Farm render ...", props.number);
-       if (props.number == 10) {
-           setColor("cell-white");
-       }
+
+    import(`../img/${props.imageName}.png`).then(image => {
+        setImage(image);
     });
 
+
     const drop = e => {
+        e.preventDefault()
         console.log(e);
         setColor("cell-white");
         setProgressPlant(<Progress/>);
         startProgress();
+        userObject.countPlans--;
     }
 
     function startProgress() {
@@ -50,7 +55,10 @@ function CallFarm(props) {
             onDragEnter={dragEnter}
             onDragLeave={dragLeave}
         >
-            {progressPlant}
+            <div className="progress">
+
+            </div>
+            <img src={image.default}></img>
         </div>
     )
 }

@@ -1,15 +1,14 @@
+@import "fonts";
+@import "Header";
+
 $borderRadius: 20px;
 
 body {
-  background-color: aquamarine;
+  background-color: #a67c52;
+  font-family: "Helvetica Neue Cyr";
+  font-size: 22px;
 }
 
-header {
-  text-align: center;
-  font-family: Montserrat;
-  font-weight: 700;
-  color: #60606e;
-}
 
 %section {
   display: flex;
@@ -51,6 +50,10 @@ header {
       height: 120px;
       margin: 2px;
       background-color: blueviolet;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
 
       .cell-white {
         background-color: white;
@@ -60,10 +63,15 @@ header {
         background-color: black;
         width: 100%;
         height: 20px;
+
         &:hover {
           background-color: red;
           opacity: 0.5;
         }
+      }
+
+      img {
+        max-height: 80%;
       }
 
       &:hover {
@@ -73,63 +81,21 @@ header {
     }
   }
 
-  .barn-market {
-    margin-left: 5px;
-    width: 20%;
-
-
-    %size-bm {
-      width: 100%;
-      height: 50%;
-      box-sizing: border-box;
-
-      border-style: inset;
-      border-radius: $borderRadius;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: end;
-      align-content: start;
-      background-color: #d2a34f;
-      overflow: auto;
-      scrollbar-color: rebeccapurple green;
-      scrollbar-width: thin;
-    }
-
-    .barn {
-      @extend %size-bm;
-
-      .fruit {
-        width: 65px;
-        height: 65px;
-        background-color: blueviolet;
-        margin: 5px;
-      }
-    }
-
-    .market {
-      @extend %size-bm;
-
-      .seed {
-        width: 65px;
-        height: 65px;
-        background-color: blueviolet;
-        margin: 5px;
-      }
-    }
-  }
+  @import "BarnMarket";
 }
 
 .section-2 {
   @extend %section;
   margin-top: 20px;
   border-style: inset;
+  border-color: white;
+  background-color: #754c24;
   border-radius: $borderRadius;
   padding: 7px;
 
   .inventory {
     height: 200px;
     width: 100%;
-    background-color: #60606e;
     display: flex;
     overflow: auto;
 

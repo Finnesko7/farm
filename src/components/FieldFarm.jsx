@@ -12,6 +12,7 @@ const FieldFarm = () => {
             <CallFarm key={1} imageName="seedling"></CallFarm>
             <CallFarm key={2} imageName="single-tree"></CallFarm>
             <CallFarm key={3} imageName="seedling"></CallFarm>
+            <CallFarm key={4} imageName="plum_tree_f"></CallFarm>
         </div>
     )
 };

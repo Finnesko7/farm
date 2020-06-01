@@ -1,6 +1,6 @@
 import React, {useState, useEffect, useContext} from "react";
 import Progress from "./Progress";
-import UserObject from "../hooks/UserUbject";
+import UserObject from "../hooks/UserContext";
 import imageTest from "../img/tree_ico.png"
 
 
@@ -22,7 +22,7 @@ function CallFarm(props) {
         setColor("cell-white");
         setProgressPlant(<Progress/>);
         startProgress();
-        userObject.countPlans--;
+        userObject.countPlants--;
     }
 
     function startProgress() {

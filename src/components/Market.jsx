@@ -19,7 +19,7 @@ const Market = () => {
                         key={key}
                         nameSeed={item.name}
                         image={item.image}
-                        buy={item.buy}
+                        price={item.price}
                         perCount={item.perCount}
                     ></Seed>
                 )}

@@ -1,15 +1,19 @@
-import React, {useContext, useState, useEffect} from 'react';
+import React, {useContext, useEffect} from 'react';
 import imgCoin from "../img/coin.png"
 import imgTree from "../img/tree_ico.png"
-import userContext from "../hooks/UserContext"
+import UserObject from "../hooks/UserContext";
 
 export function Header(props) {
 
-    const userFarm = useContext(userContext);
+    const {state, dispatch} = useContext(UserObject)
 
     const checkContext = () => {
-        console.log("userFarm.inventory.length:", userFarm.money);
+        // console.log("userFarm.inventory.length:", userFarm.money);
     }
+
+    useEffect(() => {
+        console.log("userFarm:", state)
+    })
 
     return (
         <header>
@@ -20,7 +24,7 @@ export function Header(props) {
                 <div>
                     <button onClick={checkContext}>Click</button>
                     <img src={imgCoin}></img>
-                    <span> {userFarm.money} $</span>
+                    <span> {state.money} $</span>
                 </div>
                 <div>
                     <img src={imgTree}></img>

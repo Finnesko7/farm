@@ -1,19 +1,14 @@
-import React, {useContext} from "react";
+import React, {useContext, useEffect} from "react";
 import imgCherry from "../img/chery_market.svg"
 import UserObject from "../hooks/UserContext";
 
 const Seed = (props) => {
-    const userFarm = useContext(UserObject)
-    const buy = () => {
-        userFarm.money -= 20;
-        userFarm.inventory.push({
-            title: "Mandarin",
-            description: "per 6 day",
-            namePlant: "mandarin"
-        });
+    const {state, dispatch} = useContext(UserObject)
 
-        console.log('inventory: ', userFarm.inventory);
-        console.log('money: ', userFarm.money);
+    const buy = () => {
+        let money = state.money - props.price
+        state.money = 120;
+        dispatch(state)
     }
 
     return (
@@ -21,7 +16,7 @@ const Seed = (props) => {
             <img src={imgCherry}></img>
             <div className="seed-name">{props.nameSeed}</div>
             <div className="seed-count">{props.perCount}</div>
-            <div className="seed-price">{props.buy} $</div>
+            <div className="seed-price">{props.price} $</div>
             <button className="seed-buy" onClick={buy}>Buy</button>
         </div>
     )

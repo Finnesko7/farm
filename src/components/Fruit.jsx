@@ -1,10 +1,9 @@
 import React from "react";
-import imgCherry from "../img/chery_market.svg";
 
 const Fruit = () => {
     return (
         <div className="fruit">
-            <img src={imgCherry}></img>
+            <img src="/public/images/chery_market.svg"></img>
             <div className="fruit-name">Cherry</div>
             <div className="fruit-count">1</div>
             <div className="fruit-price">12 $</div>

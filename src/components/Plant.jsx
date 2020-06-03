@@ -1,7 +1,5 @@
 import React, {useEffect, useContext, useState} from "react";
 import UserObject from "../hooks/UserContext";
-import imgTree from "../img/tree/apple.png";
-import imgPlant from "../img/plant/apple.png";
 
 const Plant = (props) => {
     const userObject = useContext(UserObject);
@@ -29,7 +27,7 @@ const Plant = (props) => {
                      onDragStart={dragStart}
                      onDragEnd={dragEnd}
                 >
-                    <img src={imgTree}></img>
+                    <img src="/public/images/tree/apple.png"></img>
                 </div>
                 <div className="plant-fruit-image"
                      draggable={true}
@@ -37,8 +35,7 @@ const Plant = (props) => {
                      onDragStart={dragStart}
                      onDragEnd={dragEnd}
                 >
-                    <img src={imgPlant}></img>
-
+                    <img src="/public/images/plant/apple.png"></img>
                 </div>
                 <div className="plant-description">
                     <p>6 fruits</p>

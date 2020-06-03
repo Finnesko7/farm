@@ -1,6 +1,4 @@
 import React, {useContext, useEffect} from 'react';
-import imgCoin from "../img/coin.png"
-import imgTree from "../img/tree_ico.png"
 import UserObject from "../hooks/UserContext";
 
 export function Header(props) {
@@ -23,11 +21,11 @@ export function Header(props) {
             <div className="header-info">
                 <div>
                     <button onClick={checkContext}>Click</button>
-                    <img src={imgCoin}></img>
+                    <img src="/public/images/coin.png"></img>
                     <span> {state.money} $</span>
                 </div>
                 <div>
-                    <img src={imgTree}></img>
+                    <img src="/public/images/tree_ico.png"></img>
                     <span> 10 </span>
                 </div>
             </div>

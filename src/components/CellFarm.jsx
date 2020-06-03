@@ -1,7 +1,6 @@
 import React, {useState, useEffect, useContext} from "react";
 import Progress from "./Progress";
 import UserObject from "../hooks/UserContext";
-import imageTest from "../img/tree_ico.png"
 
 
 function CallFarm(props) {
@@ -10,10 +9,6 @@ function CallFarm(props) {
     const [image, setImage] = useState("");
     const [progressPlant, setProgressPlant] = useState("");
 
-
-    import(`../img/${props.imageName}.png`).then(image => {
-        setImage(image);
-    });
 
 
     const drop = e => {
@@ -58,7 +53,7 @@ function CallFarm(props) {
             <div className="progress">
 
             </div>
-            <img src={image.default}></img>
+            <img src={"/public/images/" + props.imageName + ".png"}></img>
         </div>
     )
 }

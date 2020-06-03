@@ -3,10 +3,8 @@ import Plant from "./Plant";
 import UserObject from "../hooks/UserContext";
 
 const Inventory = () => {
-    const count = useRef(1);
 
     const {userFarm, _} = useContext(UserObject)
-
 
     function handleWheel(e) {
         e.preventDefault();
@@ -16,7 +14,16 @@ const Inventory = () => {
 
     return (
         <div className="inventory" id="inventory" onWheel={handleWheel}>
-            {userFarm.inventory.map((item, key) => <Plant key={key} id={key}>{count}</Plant>)}
+            {userFarm.inventory.map((item, key) =>
+                <Plant
+                    key={key}
+                    id={key}
+                    title={item.title}
+                    price={item.price}
+                    description={item.description}
+                    namePlant={item.namePlant}
+                >
+                </Plant>)}
         </div>
     )
 };

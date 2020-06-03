@@ -15,7 +15,7 @@ const Seed = (props) => {
 
     return (
         <div className="seed">
-            <img src={props.image}></img>
+            <img src={"/public/images/tree/" + props.nameSeed + ".png"}></img>
             <div className="seed-name">{props.nameSeed}</div>
             <div className="seed-count">{props.perCount}</div>
             <div className="seed-price">{props.price} $</div>

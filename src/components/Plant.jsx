@@ -2,9 +2,9 @@ import React, {useEffect, useContext, useState} from "react";
 import UserObject from "../hooks/UserContext";
 
 const Plant = (props) => {
-    const userObject = useContext(UserObject);
-    const [count, setCount] = useState(userObject.countPlants);
 
+    const imagePlant = "/public/images/plant/";
+    const imageTree = "/public/images/tree/";
 
     function dragStart(e) {
         e.dataTransfer.setData('plant-id', e.target.id);
@@ -19,15 +19,15 @@ const Plant = (props) => {
     return (
         <div className="plant">
             <div className="plant-title">
-                <div>Cherry tree</div>
-                <div className="count">{count}</div>
+                <div>{props.title}</div>
+                <div className="count">N</div>
             </div>
             <div className="plant-body">
                 <div className="plant-image"
                      onDragStart={dragStart}
                      onDragEnd={dragEnd}
                 >
-                    <img src="/public/images/tree/apple.png"></img>
+                    <img src={imageTree + props.namePlant + ".png"}></img>
                 </div>
                 <div className="plant-fruit-image"
                      draggable={true}
@@ -35,11 +35,10 @@ const Plant = (props) => {
                      onDragStart={dragStart}
                      onDragEnd={dragEnd}
                 >
-                    <img src="/public/images/plant/apple.png"></img>
+                    <img src={imagePlant + props.namePlant + ".png"}></img>
                 </div>
                 <div className="plant-description">
-                    <p>6 fruits</p>
-                    <p>per day</p>
+                    {props.description}
                 </div>
             </div>
         </div>

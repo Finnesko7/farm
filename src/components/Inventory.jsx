@@ -1,19 +1,12 @@
-import React, {useState, useEffect, useRef} from "react";
+import React, {useRef, useContext} from "react";
 import Plant from "./Plant";
+import UserObject from "../hooks/UserContext";
 
-const Inventory = (props) => {
-    const [plantArr, setPlant] = useState([1]);
-    const timerId = useRef(null);
+const Inventory = () => {
     const count = useRef(1);
 
-    useEffect(() => {
-        timerId.current = setTimeout(() => {
-            if (plantArr.length < 3) {
-                count.current++;
-                setPlant([...plantArr, count.current]);
-            }
-        }, 3000);
-    }, [count.current]);
+    const {userFarm, _} = useContext(UserObject)
+
 
     function handleWheel(e) {
         e.preventDefault();
@@ -23,7 +16,7 @@ const Inventory = (props) => {
 
     return (
         <div className="inventory" id="inventory" onWheel={handleWheel}>
-            {plantArr.map((key) => <Plant key={key} id={key}>{count}</Plant>)}
+            {userFarm.inventory.map((item, key) => <Plant key={key} id={key}>{count}</Plant>)}
         </div>
     )
 };

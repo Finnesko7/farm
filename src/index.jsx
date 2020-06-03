@@ -1,4 +1,4 @@
-import React, {Component, useReducer} from 'react';
+import React, {useReducer} from 'react';
 import ReactDom from 'react-dom';
 import "./style/App.scss"
 import {Header} from "./components/Header";
@@ -7,14 +7,14 @@ import Barn from "./components/Barn";
 import Market from "./components/Market";
 import Inventory from "./components/Inventory";
 import ContextFarm from "./hooks/UserContext";
-import UserReducer from "./hooks/userRedux";
+import UserReducer from "./hooks/UserReducer";
 import UserFarm from "./UserFarm";
 
 const App = () => {
-    const [state, dispatch] = useReducer(UserReducer, UserFarm);
+    const [userFarm, dispatch] = useReducer(UserReducer, UserFarm);
 
     return (
-        <ContextFarm.Provider value={{dispatch, state}}>
+        <ContextFarm.Provider value={{dispatch, userFarm}}>
             <div>
                 <Header/>
                 <div className="section-1">

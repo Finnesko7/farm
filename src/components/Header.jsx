@@ -3,14 +3,14 @@ import UserObject from "../hooks/UserContext";
 
 export function Header(props) {
 
-    const {state, dispatch} = useContext(UserObject)
+    const {userFarm, dispatch} = useContext(UserObject)
 
     const checkContext = () => {
         // console.log("userFarm.inventory.length:", userFarm.money);
     }
 
     useEffect(() => {
-        console.log("userFarm:", state)
+        // console.log("userFarm:", state)
     })
 
     return (
@@ -22,7 +22,7 @@ export function Header(props) {
                 <div>
                     <button onClick={checkContext}>Click</button>
                     <img src="/public/images/coin.png"></img>
-                    <span> {state.money} $</span>
+                    <span> {userFarm.money} $</span>
                 </div>
                 <div>
                     <img src="/public/images/tree_ico.png"></img>

@@ -1,19 +1,18 @@
-import React, {useEffect, useContext, useState} from "react";
-import UserObject from "../hooks/UserContext";
+import React from "react";
+const imagePlant = "/public/images/plant/";
+const imageTree = "/public/images/tree/";
 
 const Plant = (props) => {
 
-    const imagePlant = "/public/images/plant/";
-    const imageTree = "/public/images/tree/";
-
     function dragStart(e) {
-        e.dataTransfer.setData('plant-id', e.target.id);
+        console.log("e.target.id", e.target.id)
+        e.dataTransfer.setData('id', e.target.id);
+        e.dataTransfer.setData('name', e.target.name.toLowerCase());
+        console.log("dragStart - dataTransfer:", e.dataTransfer)
     }
 
     function dragEnd(e) {
         console.log("Drag end ...");
-        console.log("changed count plants:", userObject.countPlants);
-        setCount(userObject.countPlants)
     }
 
     return (
@@ -27,15 +26,14 @@ const Plant = (props) => {
                      onDragStart={dragStart}
                      onDragEnd={dragEnd}
                 >
-                    <img src={imageTree + props.namePlant + ".png"}></img>
+                    <img id={props.id} name={props.namePlant } src={imageTree + props.namePlant + ".png"}></img>
                 </div>
                 <div className="plant-fruit-image"
                      draggable={true}
-                     id={props.id}
                      onDragStart={dragStart}
                      onDragEnd={dragEnd}
                 >
-                    <img src={imagePlant + props.namePlant + ".png"}></img>
+                    <img id={props.id} name={props.namePlant } src={imagePlant + props.namePlant + ".png"}></img>
                 </div>
                 <div className="plant-description">
                     {props.description}

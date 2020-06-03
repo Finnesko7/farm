@@ -1,40 +1,40 @@
-import React, {useState, useEffect, useContext} from "react";
+import React, {useState, useRef, useContext} from "react";
 import Progress from "./Progress";
 import UserObject from "../hooks/UserContext";
 
 
 function CallFarm(props) {
-    const userObject = useContext(UserObject);
     const [color, setColor] = useState("");
+    const {userFarm, dispatch} = useContext(UserObject);
     const [image, setImage] = useState("");
     const [progressPlant, setProgressPlant] = useState("");
-
-
+    const plantName = useRef('')
 
     const drop = e => {
         e.preventDefault()
-        console.log(e);
-        setColor("cell-white");
-        setProgressPlant(<Progress/>);
-        startProgress();
-        userObject.countPlants--;
+        if (plantName.current === '') {
+            let id = e.dataTransfer.getData('id');
+            plantName.current = e.dataTransfer.getData('name');
+
+            delete userFarm.inventory[id];
+            console.log('plantName.current:', plantName.current);
+            dispatch(userFarm);
+            setProgressPlant(<Progress/>);
+            setImage(<img src="/public/images/seedling.png"></img>);
+        }
     }
 
-    function startProgress() {
-        console.log("startProgress ....");
-
-        setTimeout(() => {
-            console.log("Change color to default");
-            setColor("");
-        }, 3000);
+    const dragEnter = e => {
+        e.preventDefault();
+        if (plantName.current === '') {
+            e.target.style.backgroundColor = 'greenyellow'
+        } else {
+            e.target.style.backgroundColor = 'red'
+        }
     }
 
-    function dragEnter(element) {
-        console.log("dragEnter", element);
-    }
-
-    function dragLeave(element) {
-
+    function dragLeave(e) {
+        e.target.style.backgroundColor = ''
     }
 
     const dragOver = e => {
@@ -43,17 +43,14 @@ function CallFarm(props) {
 
     return (
         <div
-            className={color}
             id={props.number}
             onDrop={drop}
             onDragOver={dragOver}
             onDragEnter={dragEnter}
             onDragLeave={dragLeave}
         >
-            <div className="progress">
-
-            </div>
-            <img src={"/public/images/" + props.imageName + ".png"}></img>
+            {progressPlant}
+            {image}
         </div>
     )
 }

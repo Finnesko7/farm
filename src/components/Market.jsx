@@ -21,6 +21,7 @@ const Market = () => {
                         image={item.image}
                         price={item.price}
                         perCount={item.perCount}
+                        description={item.description}
                     ></Seed>
                 )}
             </div>

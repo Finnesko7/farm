@@ -6,19 +6,16 @@ const UserFarm = {
             title: "Cherry",
             description: "per 6 day",
             namePlant: "cherry",
-            price: 10
         },
         {
             title: "Apple",
             description: "per 6 day",
             namePlant: "apple",
-            price: 10
         },
         {
             title: "Lemon",
             description: "per 6 day",
             namePlant: "lemon",
-            price: 10
         }
     ]
 }

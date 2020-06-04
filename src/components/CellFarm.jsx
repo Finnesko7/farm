@@ -4,7 +4,7 @@ import UserObject from "../hooks/UserContext";
 
 
 function CallFarm(props) {
-    const [color, setColor] = useState("");
+    const [color, setColor] = useState({backgroundColor: 'white'});
     const {userFarm, dispatch} = useContext(UserObject);
     const [image, setImage] = useState("");
     const [progressPlant, setProgressPlant] = useState("");
@@ -26,15 +26,17 @@ function CallFarm(props) {
 
     const dragEnter = e => {
         e.preventDefault();
+
         if (plantName.current === '') {
-            e.target.style.backgroundColor = 'greenyellow'
+            setColor({backgroundColor:'red'});
         } else {
-            e.target.style.backgroundColor = 'red'
+            setColor({backgroundColor:'green'});
         }
     }
 
-    function dragLeave(e) {
-        e.target.style.backgroundColor = ''
+    const dragLeave = e => {
+        // e.target.style.backgroundColor = ''
+        setColor({backgroundColor:''});
     }
 
     const dragOver = e => {
@@ -43,6 +45,7 @@ function CallFarm(props) {
 
     return (
         <div
+            style={color}
             id={props.number}
             onDrop={drop}
             onDragOver={dragOver}

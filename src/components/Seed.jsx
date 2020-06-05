@@ -6,8 +6,10 @@ const Seed = (props) => {
     const {userFarm, dispatch} = useContext(UserObject)
 
     const buy = () => {
-        userFarm.money -= props.price;
-        if (userFarm.money > 0) {
+        let money = userFarm.money - props.price;
+
+        if (money > 0) {
+            userFarm.money = money;
             userFarm.inventory.push({
                 title: capitalize(props.nameSeed),
                 description: props.description,

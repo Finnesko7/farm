@@ -26,7 +26,7 @@ body {
   .field-farm {
     width: 80%;
     height: 500px;
-    background-color: red;
+    //background-color: red;
     border-style: inset;
     border-color: antiquewhite;
     border-radius: $borderRadius;
@@ -49,7 +49,6 @@ body {
       width: 11%;
       height: 120px;
       margin: 2px;
-      //background-color: blueviolet;
       display: flex;
       flex-direction: column;
       align-items: center;
@@ -59,8 +58,13 @@ body {
         background-color: white;
       }
 
+      &:hover {
+        background-color: greenyellow;
+        opacity: 0.5;
+      }
+
       .progress {
-        background-color: black;
+        //background-color: or;
         width: 100%;
         height: 20px;
         color: white;
@@ -70,11 +74,9 @@ body {
 
       img {
         max-height: 80%;
-      }
-
-      &:hover {
-        background-color: greenyellow;
-        opacity: 0.5;
+        &:hover {
+          cursor: grab;
+        }
       }
     }
   }

@@ -1,13 +1,24 @@
-import React from "react";
+import React, {useContext} from "react";
+import UserObject from "../hooks/UserContext";
 
-const Fruit = () => {
+const Fruit = ({id, name, sale, count}) => {
+
+    const {userFarm, dispatch} = useContext(UserObject);
+
+    const sell = () => {
+        userFarm.money += sale;
+        userFarm.barn.splice(id, 1);
+
+        dispatch(userFarm)
+    }
+
     return (
         <div className="fruit">
-            <img src="/public/images/chery_market.svg"></img>
-            <div className="fruit-name">Cherry</div>
-            <div className="fruit-count">1</div>
-            <div className="fruit-price">12 $</div>
-            <button className="fruit-sell">Sell</button>
+            <div className="fruit-image"><img src={`/public/images/plant/${name}.png`}></img></div>
+            <div className="fruit-name">{name}</div>
+            <div className="fruit-count">{count}</div>
+            <div className="fruit-price">{sale} $</div>
+            <button className="fruit-sell" onClick={sell}>Sell</button>
         </div>
     )
 }

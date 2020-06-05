@@ -1,5 +1,6 @@
 const UserFarm = {
-    money: 50,
+    money: 500,
+    sale: 2,
     inventory: [],
     barn: []
 }

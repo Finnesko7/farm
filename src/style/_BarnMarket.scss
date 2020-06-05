@@ -40,6 +40,10 @@
     font-size: 12px;
     font-weight: 700;
 
+    :first-letter {
+      text-transform: uppercase;
+    }
+
     img {
       max-height: 44px;
     }
@@ -70,6 +74,14 @@
     .fruit {
       @extend %item-list;
 
+      &-image {
+        width: 40px;
+      }
+
+      &-name {
+        width: 60px;
+      }
+
       &-sell {
         @extend %button;
       }
@@ -91,9 +103,6 @@
     .seed {
       @extend %item-list;
 
-      :first-letter {
-        text-transform: uppercase;
-      }
 
       &-image {
         width: 40px;

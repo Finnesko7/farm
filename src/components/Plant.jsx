@@ -19,7 +19,7 @@ const Plant = (props) => {
         <div className="plant">
             <div className="plant-title">
                 <div>{props.title}</div>
-                <div className="count">N</div>
+                <div className="count"></div>
             </div>
             <div className="plant-body">
                 <div className="plant-image"

@@ -4,23 +4,40 @@ import UserObject from "../hooks/UserContext";
 
 
 function CallFarm(props) {
-    const [color, setColor] = useState({backgroundColor: 'white'});
+    const [color, setColor] = useState({backgroundColor: ''});
     const {userFarm, dispatch} = useContext(UserObject);
     const [image, setImage] = useState("");
     const [progressPlant, setProgressPlant] = useState("");
     const plantName = useRef('')
+    const finish = useRef(false)
+
+
+    const handelTree = step => {
+        switch (step) {
+            case 'middle':
+                setImage(<img src="/public/images/middle_tree.png"></img>);
+                break;
+            case 'finish':
+                setImage(<img onClick={harvest} src={`/public/images/${plantName.current}_tree_f.png`}></img>);
+                finish.current = true;
+                break;
+            default:
+                console.log("Error execute handelTree, step not found: ", step)
+        }
+    }
 
     const drop = e => {
         e.preventDefault()
         if (plantName.current === '') {
             let id = e.dataTransfer.getData('id');
+
             plantName.current = e.dataTransfer.getData('name');
 
-            delete userFarm.inventory[id];
-            console.log('plantName.current:', plantName.current);
+            userFarm.inventory.splice(id, 1);
             dispatch(userFarm);
-            setProgressPlant(<Progress/>);
+            setProgressPlant(<Progress setTree={handelTree}/>);
             setImage(<img src="/public/images/seedling.png"></img>);
+            setColor({backgroundColor: ''});
         }
     }
 
@@ -28,19 +45,41 @@ function CallFarm(props) {
         e.preventDefault();
 
         if (plantName.current === '') {
-            setColor({backgroundColor:'red'});
+            setColor({
+                backgroundColor: 'greenyellow'
+            });
         } else {
-            setColor({backgroundColor:'green'});
+            setColor({backgroundColor: 'red'});
         }
     }
 
     const dragLeave = e => {
-        // e.target.style.backgroundColor = ''
-        setColor({backgroundColor:''});
+        setColor({backgroundColor: ''});
     }
 
     const dragOver = e => {
         e.preventDefault();
+    }
+
+    const harvest = () => {
+        console.log("harvest ..." , plantName.current);
+
+        let count = Math.floor(Math.random() * 5);
+        count = count === 0 ?? 1;
+
+        if (finish.current) {
+            userFarm.barn.push({
+                name: plantName.current,
+                count: count,
+                sale: userFarm.sale * count
+            })
+
+            setProgressPlant('');
+            setImage('');
+            plantName.current = '';
+
+            dispatch(userFarm);
+        }
     }
 
     return (

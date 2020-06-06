@@ -1,4 +1,4 @@
-import React, {useRef, useContext} from "react";
+import React, {useContext} from "react";
 import Plant from "./Plant";
 import UserObject from "../hooks/UserContext";
 
@@ -6,7 +6,7 @@ const Inventory = () => {
 
     const {userFarm, _} = useContext(UserObject)
 
-    function handleWheel(e) {
+    const handleWheel = e => {
         e.preventDefault();
         let currentPosition = document.getElementById('inventory').scrollLeft;
         document.getElementById('inventory').scrollLeft = currentPosition + (e.deltaY * 20);

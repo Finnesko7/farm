@@ -1,10 +1,8 @@
-import React, {useContext, useEffect} from 'react';
+import React, {useContext} from 'react';
 import UserObject from "../hooks/UserContext";
 
-export function Header(props) {
-
+const  Header = () => {
     const {userFarm, _} = useContext(UserObject)
-
 
     return (
         <header>
@@ -24,3 +22,5 @@ export function Header(props) {
         </header>
     )
 }
+
+export default Header;

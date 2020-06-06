@@ -3,7 +3,7 @@ import Progress from "./Progress";
 import UserObject from "../hooks/UserContext";
 
 
-function CallFarm(props) {
+const CallFarm = props => {
     const [color, setColor] = useState({backgroundColor: ''});
     const {userFarm, dispatch} = useContext(UserObject);
     const [image, setImage] = useState("");
@@ -65,8 +65,8 @@ function CallFarm(props) {
         console.log("harvest ..." , plantName.current);
 
         let count = Math.floor(Math.random() * 5);
-        count = count === 0 ?? 1;
-
+        count = count === 0 ? 1 : count;
+        console.log('count', count);
         if (finish.current) {
             userFarm.barn.push({
                 name: plantName.current,

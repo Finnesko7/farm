@@ -1,7 +1,12 @@
 import React, {useContext} from "react";
 import UserObject from "../hooks/UserContext";
 
-const Seed = (props) => {
+const capitalize = (s) => {
+    if (typeof s !== 'string') return ''
+    return s.charAt(0).toUpperCase() + s.slice(1)
+}
+
+const Seed = props => {
     const imagePath = "/public/images/tree/";
     const {userFarm, dispatch} = useContext(UserObject)
 
@@ -31,10 +36,5 @@ const Seed = (props) => {
         </div>
     )
 };
-
-const capitalize = (s) => {
-    if (typeof s !== 'string') return ''
-    return s.charAt(0).toUpperCase() + s.slice(1)
-}
 
 export default Seed;

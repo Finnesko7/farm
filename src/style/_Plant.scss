@@ -38,7 +38,10 @@
   &-image {
     width: 50%;
     height: 100%;
-    cursor: move;
+
+    img {
+      cursor: move;
+    }
   }
 
   %size-fd {
@@ -48,7 +51,10 @@
 
   &-fruit-image {
     @extend %size-fd;
-    cursor: move;
+
+    img {
+      cursor: move;
+    }
   }
 
   &-description {

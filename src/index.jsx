@@ -1,7 +1,7 @@
 import React, {useReducer} from 'react';
 import ReactDom from 'react-dom';
 import "./style/App.scss"
-import {Header} from "./components/Header";
+import Header from "./components/Header";
 import FieldFarm from "./components/FieldFarm";
 import Barn from "./components/Barn";
 import Market from "./components/Market";

@@ -2,7 +2,6 @@ import React, {useContext} from "react";
 import UserObject from "../hooks/UserContext";
 
 const Fruit = ({id, name, sale, count}) => {
-
     const {userFarm, dispatch} = useContext(UserObject);
 
     const sell = () => {

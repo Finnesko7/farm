@@ -1,8 +1,8 @@
 >Step 1:
   >>Install all package (run command):
-  >>> nmp i
+  >>> npm i
 
 >Step 2:
   >>Start project:
-  >>> nmp satrt
+  >>> npm run start
   

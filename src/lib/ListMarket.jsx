@@ -1,4 +1,3 @@
-const setImage = name => imagePath + name + '.svg';
 
 const ListMarket = [
     {

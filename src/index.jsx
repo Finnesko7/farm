@@ -8,7 +8,7 @@ import Market from "./components/Market";
 import Inventory from "./components/Inventory";
 import ContextFarm from "./hooks/UserContext";
 import UserReducer from "./hooks/UserReducer";
-import UserFarm from "./UserFarm";
+import UserFarm from "./lib/UserFarm";
 
 const App = () => {
     const [userFarm, dispatch] = useReducer(UserReducer, UserFarm);

@@ -1,6 +1,6 @@
 import React from "react";
 import Seed from "./Seed";
-import ListMarket from "../ListMarket";
+import ListMarket from "../lib/ListMarket";
 
 const Market = () => (
     <div className="market">

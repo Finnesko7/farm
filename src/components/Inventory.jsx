@@ -4,7 +4,7 @@ import UserObject from "../hooks/UserContext";
 
 const Inventory = () => {
 
-    const {userFarm, _} = useContext(UserObject)
+    const {userFarm} = useContext(UserObject)
 
     const handleWheel = e => {
         e.preventDefault();

@@ -11,10 +11,10 @@ import UserReducer from "./hooks/UserReducer";
 import UserFarm from "./lib/UserFarm";
 
 const App = () => {
-    const [userFarm, dispatch] = useReducer(UserReducer, UserFarm);
+    const [userFarm, setUserFarm] = useReducer(UserReducer, UserFarm);
 
     return (
-        <ContextFarm.Provider value={{dispatch, userFarm}}>
+        <ContextFarm.Provider value={{setUserFarm, userFarm}}>
             <div>
                 <Header/>
                 <div className="section-1">

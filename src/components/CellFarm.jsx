@@ -5,7 +5,7 @@ import UserObject from "../hooks/UserContext";
 
 const CallFarm = props => {
     const [color, setColor] = useState({backgroundColor: ''});
-    const {userFarm, dispatch} = useContext(UserObject);
+    const {userFarm, setUserFarm} = useContext(UserObject);
     const [image, setImage] = useState("");
     const [progressPlant, setProgressPlant] = useState("");
     const plantName = useRef('')
@@ -34,7 +34,7 @@ const CallFarm = props => {
             plantName.current = e.dataTransfer.getData('name');
 
             userFarm.inventory.splice(id, 1);
-            dispatch(userFarm);
+            setUserFarm(userFarm);
             setProgressPlant(<Progress setTree={handelTree}/>);
             setImage(<img src="/public/images/seedling.png"></img>);
             setColor({backgroundColor: ''});
@@ -78,7 +78,7 @@ const CallFarm = props => {
             setImage('');
             plantName.current = '';
 
-            dispatch(userFarm);
+            setUserFarm(userFarm);
         }
     }
 

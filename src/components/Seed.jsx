@@ -8,7 +8,7 @@ const capitalize = (s) => {
 
 const Seed = props => {
     const imagePath = "/public/images/tree/";
-    const {userFarm, dispatch} = useContext(UserObject)
+    const {userFarm, setUserFarm} = useContext(UserObject)
 
     const buy = () => {
         let money = userFarm.money - props.price;
@@ -20,7 +20,7 @@ const Seed = props => {
                 description: props.description,
                 namePlant: props.nameSeed,
             })
-            dispatch(userFarm)
+            setUserFarm(userFarm)
         } else {
             alert("You don't have money for buy!")
         }

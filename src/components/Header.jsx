@@ -2,7 +2,7 @@ import React, {useContext} from 'react';
 import UserObject from "../hooks/UserContext";
 
 const  Header = () => {
-    const {userFarm, _} = useContext(UserObject)
+    const {userFarm} = useContext(UserObject)
 
     return (
         <header>

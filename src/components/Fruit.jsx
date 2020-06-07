@@ -2,13 +2,13 @@ import React, {useContext} from "react";
 import UserObject from "../hooks/UserContext";
 
 const Fruit = ({id, name, sale, count}) => {
-    const {userFarm, dispatch} = useContext(UserObject);
+    const {userFarm, setUserFarm} = useContext(UserObject);
 
     const sell = () => {
         userFarm.money += sale;
         userFarm.barn.splice(id, 1);
 
-        dispatch(userFarm)
+        setUserFarm(userFarm)
     }
 
     return (

@@ -1,7 +1,7 @@
 import React from "react";
 
-const imagePlant = "/public/images/plant/";
-const imageTree = "/public/images/tree/";
+const pathPlant = "/public/images/plant/";
+const pathTree = "/public/images/tree/";
 
 const Plant = props => {
 
@@ -21,19 +21,20 @@ const Plant = props => {
             <div className="plant-body">
                 <div className="plant-image">
                     <img
+                        draggable
                         onDragStart={dragStart}
                         name={props.namePlant}
                         id={props.id}
-                        src={imageTree + props.namePlant + ".png"}
+                        src={`${pathTree}${props.namePlant}.png`}
                     ></img>
                 </div>
                 <div className="plant-fruit-image">
                     <img
-                        draggable={true}
+                        draggable
                         onDragStart={dragStart}
                         name={props.namePlant}
                         id={props.id}
-                        src={imagePlant + props.namePlant + ".png"}
+                        src={`${pathPlant}${props.namePlant}.png`}
                     ></img>
                 </div>
                 <div className="plant-description">

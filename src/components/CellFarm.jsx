@@ -15,10 +15,10 @@ const CallFarm = props => {
     const handelTree = step => {
         switch (step) {
             case 'middle':
-                setImage(<img src="/public/images/middle_tree.png"></img>);
+                setImage('/public/images/middle_tree.png');
                 break;
             case 'finish':
-                setImage(<img onClick={harvest} src={`/public/images/${plantName.current}_tree_f.png`}></img>);
+                setImage(`/public/images/${plantName.current}_tree_f.png`);
                 finish.current = true;
                 break;
             default:
@@ -36,7 +36,7 @@ const CallFarm = props => {
             userFarm.inventory.splice(id, 1);
             setUserFarm(userFarm);
             setProgressPlant(<Progress setTree={handelTree}/>);
-            setImage(<img src="/public/images/seedling.png"></img>);
+            setImage('/public/images/seedling.png');
             setColor({backgroundColor: ''});
         }
     }
@@ -62,12 +62,13 @@ const CallFarm = props => {
     }
 
     const harvest = () => {
-        console.log("harvest ..." , plantName.current);
-
-        let count = Math.floor(Math.random() * 5);
-        count = count === 0 ? 1 : count;
-        console.log('count', count);
         if (finish.current) {
+            console.log("harvest ...", plantName.current);
+
+            let count = Math.floor(Math.random() * 5);
+            count = count === 0 ? 1 : count;
+            console.log('count', count);
+
             userFarm.barn.push({
                 name: plantName.current,
                 count: count,
@@ -77,7 +78,7 @@ const CallFarm = props => {
             setProgressPlant('');
             setImage('');
             plantName.current = '';
-
+            finish.current = false;
             setUserFarm(userFarm);
         }
     }
@@ -92,7 +93,7 @@ const CallFarm = props => {
             onDragLeave={dragLeave}
         >
             {progressPlant}
-            {image}
+            {image && <img src={image} onClick={harvest}></img>}
         </div>
     )
 }
